@@ -6,9 +6,6 @@ endif()
 
 PROJECT(Basic_QtVTK)
 
-FIND_PACKAGE(AIGS REQUIRED)
-INCLUDE(${AIGS_USE_FILE})
-
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
 
@@ -33,9 +30,7 @@ if(${VTK_VERSION} VERSION_GREATER "6" AND VTK_QT_VERSION VERSION_GREATER "4")
   add_executable(Basic_QtVTK MACOSX_BUNDLE
     ${CXX_FILES} ${UISrcs} ${QT_WRAP})
   qt5_use_modules(Basic_QtVTK Core Gui)
-  target_link_libraries(Basic_QtVTK ${VTK_LIBRARIES} 
-    vtkndicapi
-    vtkTracking)
+  target_link_libraries(Basic_QtVTK ${VTK_LIBRARIES})
 else()
   QT4_WRAP_UI(UISrcs ${UI_FILES})
   QT4_WRAP_CPP(MOCSrcs ${QT_WRAP})
