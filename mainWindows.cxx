@@ -70,6 +70,7 @@ POSSIBILITY OF SUCH DAMAGES.
 #include <QDebug>
 #include <QErrorMessage>
 #include <QFileDialog>
+#include <QMessageBox>
 
 
 template< class PReader > vtkPolyData *readAnPolyData(const char *fname) {
@@ -127,7 +128,7 @@ void basic_QtVTK::setupQTObjects()
   connect(actionMesh_Color, SIGNAL(triggered()), this, SLOT(editMeshColor()));
   connect(action_Background_Color, SIGNAL(triggered()), this, SLOT(editRendererBackgroundColor()));
   connect(actionScreen_Shot, SIGNAL(triggered()), this, SLOT(screenShot()));
-  
+  connect(actionthis_program, SIGNAL(triggered()), this, SLOT(aboutThisProgram()));
 }
 
 
@@ -250,4 +251,15 @@ void basic_QtVTK::slotExit()
 {
   cleanVTKObjects(); // if needed
   qApp->exit();
+}
+
+
+
+void basic_QtVTK::aboutThisProgram()
+{
+  QMessageBox::about(this, tr("About basic_QtVTK"),
+    tr("This is a demostration for Qt/VTK integration\n\n"
+      "By: \n\n"
+      "Elvis C.S. Chen\t\t"
+      "chene@robarts.ca"));
 }

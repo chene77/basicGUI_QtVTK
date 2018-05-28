@@ -75,6 +75,8 @@ public slots:
   void editRendererBackgroundColor();
   void screenShot();
   
+  void aboutThisProgram();
+
 public:
   // centralized location to initiate all vtk objects
   void createVTKObjects();

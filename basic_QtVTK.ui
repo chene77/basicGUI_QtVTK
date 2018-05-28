@@ -58,8 +58,15 @@
     <addaction name="actionMesh_Color"/>
     <addaction name="action_Background_Color"/>
    </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionthis_program"/>
+   </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_Edit"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionLoad_Mesh">
@@ -100,6 +107,16 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionthis_program">
+   <property name="text">
+    <string>basic_QtVTK</string>
+   </property>
+  </action>
+  <action name="actionQt">
+   <property name="text">
+    <string>Qt</string>
    </property>
   </action>
  </widget>
