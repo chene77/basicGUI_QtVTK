@@ -136,7 +136,7 @@ void basic_QtVTK::loadMesh()
   QString fname = QFileDialog::getOpenFileName(this,
     tr("Open phantom mesh"),
     QDir::currentPath(),
-    "Text File (*.vtk *.stl *.ply *.obj *.vtp)");
+    "PolyData File (*.vtk *.stl *.ply *.obj *.vtp)");
 
   // std::cerr << fname.toStdString().c_str() << std::endl;
 
